@@ -1,0 +1,130 @@
+﻿<metro:MetroWindow
+   x:Class="MaterialDesignThemesV3Demo.MainWindow"
+   xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+   xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+   xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+   xmlns:local="clr-namespace:MaterialDesignThemesV3Demo"
+   xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+   xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+   xmlns:metro="http://metro.mahapps.com/winfx/xaml/controls"
+   Title="Material Design Themes ver.3.0.0 Demo"
+   Background="{DynamicResource MaterialDesignPaper}"
+   BorderThickness="3"
+   FontFamily="{materialDesign:MaterialDesignFont}"
+   GlowBrush="{DynamicResource AccentColorBrush}"
+   TextElement.FontSize="14"
+   TextElement.FontWeight="Medium"
+   TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+   mc:Ignorable="d">
+   <StackPanel>
+      <StackPanel Orientation="Horizontal">
+         <TextBlock Margin="10" Text="text" />
+         <TextBox Margin="10" Text="ABCDEFG" />
+         <Button Margin="10" Content="CLICK" />
+         <CheckBox Margin="10" Content="CHECK" />
+         <ToggleButton Margin="10" Content="T" />
+      </StackPanel>
+      <StackPanel Orientation="Horizontal">
+         <Button
+            Margin="10"
+            Content="MaterialDesignRaisedLightButton"
+            Style="{StaticResource MaterialDesignRaisedLightButton}" />
+         <Button
+            Margin="10"
+            Content="MaterialDesignRaisedButton"
+            Style="{StaticResource MaterialDesignRaisedButton}" />
+         <Button
+            Margin="10"
+            Content="MaterialDesignRaisedDarkButton"
+            Style="{StaticResource MaterialDesignRaisedDarkButton}" />
+         <Button
+            Margin="10"
+            Content="MaterialDesignRaisedAccentButton"
+            Style="{StaticResource MaterialDesignRaisedAccentButton}" />
+      </StackPanel>
+      <StackPanel Orientation="Horizontal">
+         <materialDesign:Badged Margin="10" Badge="999">
+            <Button Content="REMAIN" />
+         </materialDesign:Badged>
+         <materialDesign:Badged
+            Margin="10"
+            Badge="{materialDesign:PackIcon SmileyPoop}"
+            BadgeColorZoneMode="Accent">
+            <Button Content="ACOUNT" />
+         </materialDesign:Badged>
+      </StackPanel>
+      <StackPanel Orientation="Horizontal">
+         <Button
+            Margin="10"
+            materialDesign:ButtonProgressAssist.IsIndicatorVisible="True"
+            materialDesign:ButtonProgressAssist.Value="80"
+            Content="Progress 80%" />
+         <Button
+            Margin="10"
+            materialDesign:ButtonProgressAssist.IsIndeterminate="True"
+            materialDesign:ButtonProgressAssist.IsIndicatorVisible="True"
+            Content="Updating..." />
+         <Button
+            Margin="10"
+            materialDesign:ButtonProgressAssist.IsIndeterminate="True"
+            materialDesign:ButtonProgressAssist.IsIndicatorVisible="True"
+            Content="{materialDesign:PackIcon Update}"
+            Style="{StaticResource MaterialDesignFloatingActionButton}" />
+      </StackPanel>
+
+      <materialDesign:Flipper
+         HorizontalAlignment="Left"
+         VerticalAlignment="Top"
+         Style="{StaticResource MaterialDesignCardFlipper}">
+         <materialDesign:Flipper.FrontContent>
+            <materialDesign:Card
+               Width="128"
+               Height="128"
+               Background="{StaticResource PrimaryHueLightBrush}"
+               Foreground="{StaticResource PrimaryHueLightForegroundBrush}">
+               <UniformGrid Columns="1">
+                  <materialDesign:PackIcon
+                     Width="64"
+                     Height="64"
+                     HorizontalAlignment="Center"
+                     Kind="EmoticonExcitedOutline" />
+                  <Button
+                     Command="{x:Static materialDesign:Flipper.FlipCommand}"
+                     Content="Dr. Jekyll"
+                     Style="{StaticResource MaterialDesignRaisedLightButton}" />
+               </UniformGrid>
+            </materialDesign:Card>
+         </materialDesign:Flipper.FrontContent>
+         <materialDesign:Flipper.BackContent>
+            <materialDesign:Card
+               Width="256"
+               Height="256"
+               Background="{StaticResource PrimaryHueDarkBrush}"
+               Foreground="{StaticResource PrimaryHueDarkForegroundBrush}">
+               <StackPanel Orientation="Horizontal">
+                  <materialDesign:PackIcon
+                     Width="128"
+                     Height="128"
+                     VerticalAlignment="Center"
+                     Kind="EmoticonAngry" />
+                  <Button
+                     Command="{x:Static materialDesign:Flipper.FlipCommand}"
+                     Content="Mr. Hyde"
+                     Style="{StaticResource MaterialDesignRaisedAccentButton}" />
+               </StackPanel>
+            </materialDesign:Card>
+         </materialDesign:Flipper.BackContent>
+      </materialDesign:Flipper>
+      <RichTextBox materialDesign:HintAssist.Hint="Multiline text">
+         <FlowDocument>
+            <Paragraph>
+               normal text.<LineBreak />
+               <Run
+                  FontStyle="Italic"
+                  Foreground="{StaticResource PrimaryHueDarkBrush}"
+                  Text="italic dark text." />
+            </Paragraph>
+         </FlowDocument>
+      </RichTextBox>
+   </StackPanel>
+</metro:MetroWindow>
